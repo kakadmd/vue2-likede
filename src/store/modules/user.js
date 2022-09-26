@@ -4,6 +4,7 @@ export default {
   state: {
     clientToken: null
   },
+
   mutations: {
     SET_TOKEN(state, token) {
       state.clientToken = token
