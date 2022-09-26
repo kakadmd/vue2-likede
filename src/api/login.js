@@ -11,10 +11,10 @@ export const getCodeAPI = (data) => {
   })
 }
 
-export const userLoginAPI = (params) => {
+export const userLoginAPI = (data) => {
   return request({
     url: '/user-service/user/login',
     method: 'POST',
-    params
+    data
   })
 }

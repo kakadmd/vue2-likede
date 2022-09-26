@@ -50,7 +50,7 @@
 </template>
 
 <script>
-// import { getCodeAPI, userLoginAPI } from '@/api/login'
+
 import { getCodeAPI } from '@/api/login'
 import { validUserInfo, validUserCode } from '@/utils/validate'
 export default {
@@ -118,6 +118,7 @@ export default {
     }
   },
   created() {
+    this.clickCode()
   },
   methods: {
     showPassword() {
@@ -130,15 +131,20 @@ export default {
       // 取一个随机数去发送请求生成验证码
       const num = Math.random()
       // console.log(num)
-      // this.userForm.clientToken = num
+
+      // 准备一个随机数存到vuex里面
+      this.$store.commit('user/SET_CODE', num)
+      this.$store.dispatch('user/getCode', this.num)
       const res = await getCodeAPI(num)
-      console.log(res)
+      // console.log(res)
+      if (res) {
+        this.userForm.clientToken = num
+      }
       const { request: { responseURL }} = res
       // console.log(responseURL)
       this.codeUrl = responseURL
     },
     async loginBtn() {
-      // console.log(userLoginAPI(this.userForm))
       await this.$refs.userForm.validate()
       // 通过校验之后点击登录转圈
       this.loading = true
@@ -146,6 +152,7 @@ export default {
       // 调取接口请求
       await this.$store.dispatch('user/loginAction', this.userForm)
 
+      this.$router.push('/dashboard')
       // 成功登陆之后，loading结束转圈
       this.loading = false
     }
