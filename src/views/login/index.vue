@@ -134,7 +134,8 @@ export default {
 
       // 准备一个随机数存到vuex里面
       this.$store.commit('user/SET_CODE', num)
-      this.$store.dispatch('user/getCode', this.num)
+      // this.$store.dispatch('user/getCode', this.num)
+      this.$store.commit('user/SET_TOKEN', num)
       const res = await getCodeAPI(num)
       // console.log(res)
       if (res) {

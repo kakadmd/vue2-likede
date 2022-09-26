@@ -30,7 +30,7 @@ export default {
     async loginAction(context, loginInfo) {
       const { commit } = context
       const res = await userLoginAPI(loginInfo)
-      console.log(res.data)
+      // console.log(res.data)
       const result = res.data
       commit('SET_USERINFO', result)
     }
