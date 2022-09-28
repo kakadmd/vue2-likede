@@ -6,14 +6,14 @@ export default {
   component: Layout,
   meta: {
     title: '策略管理',
-    icon: 'dashboard'
+    icon: 'celue'
   },
   children: [
     {
       path: 'index',
       name: 'index',
       component: () => import('@/views/celve'),
-      meta: { title: '策略管理' }
+      meta: { title: '策略管理', icon: 'celue' }
     }
   ]
 }

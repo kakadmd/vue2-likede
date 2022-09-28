@@ -6,7 +6,7 @@ export default {
   component: Layout,
   meta: {
     title: '订单管理',
-    icon: 'dashboard'
+    icon: 'dingdan'
   },
   children: [
     {

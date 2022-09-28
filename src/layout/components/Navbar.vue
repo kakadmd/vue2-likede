@@ -5,28 +5,21 @@
     <breadcrumb class="breadcrumb-container" />
 
     <div class="right-menu">
-      <el-dropdown class="avatar-container" trigger="click">
+      <div class="avatar-container">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
+         <div>
+          <img src="../../assets/common/logo.png" class="user-avatar">
+          </div>
+          <span class="user-msg">欢迎您，用户名 {{ username }} </span>
+          <el-tooltip content="退出" placement="top">
+          <span>
+            退出
+               <i class="el-icon-caret-bottom" />
+          </span>
+              </el-tooltip>
+
         </div>
-        <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
-            <el-dropdown-item>
-              Home
-            </el-dropdown-item>
-          </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
-          <el-dropdown-item divided @click.native="logout">
-            <span style="display:block;">Log Out</span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+      </div>
     </div>
   </div>
 </template>
@@ -41,12 +34,22 @@ export default {
     Breadcrumb
     // Hamburger
   },
+  data() {
+    return {
+      username: ''
+    }
+  },
   computed: {
     ...mapGetters([
       'sidebar',
       'avatar'
     ])
   },
+  created() {
+    this.username = this.$store.getters.username
+    console.log(this.username)
+  },
+
   methods: {
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
@@ -61,6 +64,10 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 20px;
   height: 56px;
   overflow: hidden;
   position: relative;
@@ -68,32 +75,13 @@ export default {
   z-index:1000;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
-img {
-  width: 88px;
-  height: 36px;
-  margin: 10px 0 0 30px;
-}
-  .hamburger-container {
-    line-height: 46px;
-    height: 100%;
-    float: left;
-    cursor: pointer;
-    transition: background .3s;
-    -webkit-tap-highlight-color:transparent;
-
-    &:hover {
-      background: rgba(0, 0, 0, .025)
-    }
-  }
-
-  .breadcrumb-container {
-    float: left;
+  img {
+    width: 88px;
+    height: 36px;
   }
 
   .right-menu {
-    float: right;
-    height: 100%;
-    line-height: 50px;
+    height: 56px;
 
     &:focus {
       outline: none;
@@ -118,25 +106,51 @@ img {
     }
 
     .avatar-container {
-      margin-right: 30px;
-
+       height:56px;
+      // margin-right: 30px;
+      // display: flex;
+      // align-items: center;
+      // color:#fff;
       .avatar-wrapper {
-        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        height: 56px;
         position: relative;
-
+        color: #fff;
+        .user-msg {
+          font-size: 16px;
+          margin-right: 25px;
+        }
         .user-avatar {
           cursor: pointer;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          margin-right: 15px;
+        }
+
+        span {
+          // margin-left: 20px;
+          // display: inline-block;
+          // height: 54px;
+          // color:#fff;
+          // font-size: 16px;
+          // padding-bottom: 10px;
+
+          .exit{
           width: 40px;
-          height: 40px;
-          border-radius: 10px;
+          height: 56px;
+          text-align: center;
+        }
         }
 
         .el-icon-caret-bottom {
           cursor: pointer;
           position: absolute;
+          color:#fff;
           right: -20px;
-          top: 25px;
-          font-size: 12px;
+          top: 20px;
+          font-size: 16px;
         }
       }
     }

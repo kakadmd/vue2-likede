@@ -4,7 +4,7 @@ export default {
   path: '/user',
   name: 'user',
   component: Layout,
-  meta: { title: '人员管理', icon: 'gongdan' },
+  meta: { title: '人员管理', icon: 'renyuan' },
   children: [
     {
       path: 'index',

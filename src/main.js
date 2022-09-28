@@ -1,5 +1,6 @@
 import Vue from 'vue'
 
+// import * as echarts from 'echarts'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'

@@ -4,7 +4,7 @@ export default {
   path: '/vm',
   name: 'vm',
   component: Layout,
-  meta: { title: '设备管理', icon: 'gongdan' },
+  meta: { title: '设备管理', icon: 'shebei' },
   children: [
     {
       path: 'index',

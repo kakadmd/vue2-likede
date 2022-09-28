@@ -6,14 +6,14 @@ export default {
   component: Layout,
   meta: {
     title: '对账管理',
-    icon: 'dashboard'
+    icon: 'zhangdan'
   },
   children: [
     {
       path: 'index',
       name: 'index',
       component: () => import('@/views/duizhang'),
-      meta: { title: '对账管理', icon: 'dashboard' }
+      meta: { title: '对账管理', icon: 'zhangdan' }
     }
   ]
 }

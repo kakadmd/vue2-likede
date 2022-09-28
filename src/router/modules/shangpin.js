@@ -5,7 +5,7 @@ export default {
   path: '/sku',
   name: 'sku',
   component: Layout,
-  meta: { title: '商品管理', icon: 'dianwei' },
+  meta: { title: '商品管理', icon: 'shangpin' },
   children: [
     {
       path: 'sku-class',
