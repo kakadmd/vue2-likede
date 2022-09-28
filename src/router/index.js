@@ -1,6 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import GongDan from './modules/GongDan'
+import celve from './modules/celve'
+import dianwei from './modules/dianwei'
+import dingdan from './modules/dingdan'
+import dkd from './modules/dkd'
+import renyuan from './modules/renyuan'
+import shangpin from './modules/shangpin'
+import shebei from './modules/shebei'
+import duizhang from './modules/duizhang'
 
+const aysncRouters = [dkd, GongDan, dianwei, shebei, renyuan, shangpin, celve, dingdan, duizhang]
 Vue.use(Router)
 
 /* Layout */
@@ -62,7 +72,7 @@ export const constantRoutes = [
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
+  routes: [...constantRoutes, ...aysncRouters]
 })
 
 const router = createRouter()

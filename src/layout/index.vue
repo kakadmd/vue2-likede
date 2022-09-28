@@ -1,10 +1,10 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <div v-if="device === 'mobile' && sidebar && sidebar.opened " class="drawer-bg" @click="handleClickOutside" />
+        <navbar />
+    <!-- <div v-if="device === 'mobile' && sidebar && sidebar.opened " class="drawer-bg" @click="handleClickOutside" /> -->
     <sidebar class="sidebar-container" />
     <div class="main-container">
       <div :class="{'fixed-header':fixedHeader}">
-        <navbar />
       </div>
       <app-main />
     </div>
@@ -35,10 +35,10 @@ export default {
     },
     classObj() {
       return {
-        hideSidebar: !this.sidebar.opened,
-        openSidebar: this.sidebar.opened,
-        withoutAnimation: this.sidebar.withoutAnimation,
-        mobile: this.device === 'mobile'
+        openSidebar: this.sidebar.opened
+        // hideSidebar: !this.sidebar.opened,
+        // withoutAnimation: this.sidebar.withoutAnimation,
+        // mobile: this.device === 'mobile'
       }
     }
   },

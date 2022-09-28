@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
-    <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
-
+    <!-- <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" /> -->
+<img src="../../assets/common/logoone.png" alt="">
     <breadcrumb class="breadcrumb-container" />
 
     <div class="right-menu">
@@ -34,12 +34,12 @@
 <script>
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
-import Hamburger from '@/components/Hamburger'
+// import Hamburger from '@/components/Hamburger'
 
 export default {
   components: {
-    Breadcrumb,
-    Hamburger
+    Breadcrumb
+    // Hamburger
   },
   computed: {
     ...mapGetters([
@@ -64,9 +64,15 @@ export default {
   height: 56px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background-image: url('../../assets/common/backgroundone.png');
+  z-index:1000;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
+img {
+  width: 88px;
+  height: 36px;
+  margin: 10px 0 0 30px;
+}
   .hamburger-container {
     line-height: 46px;
     height: 100%;
