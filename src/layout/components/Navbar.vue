@@ -8,7 +8,7 @@
       <div class="avatar-container">
         <div class="avatar-wrapper">
          <div>
-          <img src="../../assets/common/logo.png" class="user-avatar">
+          <img src="../../assets/common/user.png" class="user-avatar">
           </div>
           <span class="user-msg">欢迎您，用户名 {{ username }} </span>
           <el-tooltip content="退出" placement="top">
@@ -47,7 +47,7 @@ export default {
   },
   created() {
     this.username = this.$store.getters.username
-    console.log(this.username)
+    // console.log(this.username)
   },
 
   methods: {
@@ -64,6 +64,9 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  width: 100%;
+  position: fixed !important;
+  top: 0 !important;
   display:flex;
   justify-content: space-between;
   align-items: center;

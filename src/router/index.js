@@ -14,7 +14,7 @@ const aysncRouters = [dkd, GongDan, dianwei, shebei, renyuan, shangpin, celve, d
 Vue.use(Router)
 
 /* Layout */
-import Layout from '@/layout'
+// import Layout from '@/layout'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -53,17 +53,17 @@ export const constantRoutes = [
     hidden: true
   },
 
-  {
-    path: '/',
-    component: Layout,
-    redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
-  },
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   redirect: '/dashboard',
+  //   children: [{
+  //     path: 'dashboard',
+  //     name: 'Dashboard',
+  //     component: () => import('@/views/dashboard/index'),
+  //     meta: { title: 'Dashboard', icon: 'dashboard' }
+  //   }]
+  // },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }

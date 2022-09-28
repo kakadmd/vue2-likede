@@ -22,3 +22,14 @@ export function logout() {
     method: 'post'
   })
 }
+
+/**
+ * 获取用户详细信息
+ * @param {userId} id
+ * @returns Promise
+ */
+// export const getUserDetailMsg = (id) => {
+//   return request({
+//     url: `/user-service/user/${id}`
+//   })
+// }

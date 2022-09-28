@@ -1,6 +1,5 @@
 import Vue from 'vue'
 
-// import * as echarts from 'echarts'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
@@ -15,6 +14,11 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+
+// 引入echarts
+// import echarts from 'echarts' 这样子引入Echarts 控制台会报init的错
+import * as echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 
 /**
  * If you don't want to use mock-server

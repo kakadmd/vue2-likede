@@ -9,5 +9,4 @@ const getters = {
   username: state => state.user.userInfo.userName,
   codeUrl: state => state.codeUrl
 }
-console.log('username')
 export default getters

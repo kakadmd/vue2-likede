@@ -153,7 +153,7 @@ export default {
       // 调取接口请求
       await this.$store.dispatch('user/loginAction', this.userForm)
 
-      this.$router.push('/dashboard')
+      this.$router.push('/home')
       // 成功登陆之后，loading结束转圈
       this.loading = false
     }
